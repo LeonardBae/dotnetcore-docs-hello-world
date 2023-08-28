@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotnetcore
+  namespace: namespace-workflow-1693257278097
+spec:
+  type: LoadBalancer
+  selector:
+    app: dotnetcore
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

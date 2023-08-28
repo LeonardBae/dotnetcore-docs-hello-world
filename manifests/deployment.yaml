@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetcore
+  labels:
+    app: dotnetcore
+  namespace: namespace-workflow-1693257278097
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetcore
+  template:
+    metadata:
+      labels:
+        app: dotnetcore
+    spec:
+      containers:
+        - name: dotnetcore
+          image: aksappenvacrvea.azurecr.io/dotnetcore:latest
+          ports:
+            - containerPort: 5000
